@@ -5,6 +5,17 @@ on:
     branches:
       - main
   workflow_dispatch:
+    inputs:
+      image_name:
+        description: "Docker Image Name (e.g., signals-frontend, signals-backend)"
+        required: true
+        type: string
+      tag:
+        description: "Image Tag (e.g., latest, v1.0.0, dev)"
+        required: false
+        default: "latest"
+        type: string
+
 
 jobs:
   build-and-push:
